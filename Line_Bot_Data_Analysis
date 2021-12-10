@@ -1,0 +1,72 @@
+Demo - 視覺化圖表
+
+
+Demo - 出席統計 by month
+
+
+Demo - 出席統計 by week
+
+
+Demo - LINE Bot 群組
+
+如果有想建置機器人的朋友，這份程式已經整理過，並包好 Docker 環境，有需要的朋友只需要依以下步驟建立，就可以快速完成一個打卡聊天機器人囉
+
+2. Requirements
+Python >= 3.4
+3. Prerequisite Setup
+首先建立 LINE develops 帳戶，請參考這篇 [Flask – LINE Bot 教學] 事前準備篇 (一) - Max行銷誌
+ 取得 Channel secret
+ 取得 Channel access token
+串接 Google Sheet 操作，請參考這篇 python 串接 GoogleSheet 新增、讀取、更新和刪除 - Max行銷誌
+ 取得 Google OAuth Credentials
+將剛剛拿到的 Google OAuth Credentials 放到資料夾位置：LINE-Bot-Template/bot/config/api-key.json
+
+最後建立LINE-Bot-Template/.flaskenv，並將在第一步 LINE develops 帳戶中的 CHANNEL_ACCESS_TOKEN 和 CHANNEL_SECRET 填入，而 google_sheet_url 則是填入要操作的 google sheet 網址，範例如下：
+
+export FLASK_APP=main.py
+
+export CHANNEL_ACCESS_TOKEN="get your access token from Line developers page"
+
+export CHANNEL_SECRET='yout line bot channel secret key'
+
+export google_sheet_url='https://docs.google.com/spreadsheets/d/kkkkkk-aaaaaa-ssssss/'
+4. Setup Development Environment & Run
+▍Method 1 - Docker
+
+$ bash boot.sh
+▍Method 2 - Python Built-in venv
+
+Create your virtual environment
+$ python3 -m venv venv
+And enable virtual environment
+$ . venv/bin/activate
+Install requirements
+$ pip install -r requirements.txt 
+Run Flask
+$ flask run
+▍Method 3 - Poetry
+
+Install requirements
+$ poetry install
+And enable virtual environment
+$ poetry shell
+Run Flask
+$ flask run
+5. Test
+Run the following command:
+
+$ flask test
+To run tests with coverage report:
+
+$ bash test.sh
+6. Contributing
+PRs are welcome!
+
+7. 如果想客製自己的 LINE Bot
+我覺得 LINE Bot 部署可能比較容易遇到問題，所以寫了以下兩篇文章：
+
+[Flask – LINE Bot 教學] Heroku 一鍵自動部署
+[Flask – LINE Bot 教學] GCP 部署 (Docker+Flask+Nginx)
+在讀 LINE Bot SDK 的時候，也順手整理了一下驗證機制的部分：
+
+淺談 LINE-Bot 中的驗證機制 (HMAC & Bearer Token)
