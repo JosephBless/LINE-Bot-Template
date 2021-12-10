@@ -2,10 +2,9 @@
 
 [![codecov](https://codecov.io/gh/hsuanchi/LINE-Bot-Template/branch/master/graph/badge.svg?token=HN2G37H56S)](https://codecov.io/gh/hsuanchi/LINE-Bot-Template)
 
-## 1. Side Project 原由
-最近加入早起團 AM 6:00 要起床打卡，看到大家用手動統計出席的方式很費時，所以寫了這隻 LINE Bot 群聊的打卡機器人，只需要在群組中輸入固定字詞，機器人就會將使用者姓名、打卡時間傳送至 Google Sheet，再串接 DataStudio 將資料視覺化。
+## 1. Side Project 視覺化
 
-#### Demo - 覺化圖表
+#### Demo - 視覺化圖表
 <img src="https://github.com/hsuanchi/LINE-Bot-Template/blob/master/img/line_chart.jpg" width="800px" height="auto">
 
 #### Demo - 出席統計 by month
@@ -14,8 +13,7 @@
 #### Demo - 出席統計 by week
 <img src="https://github.com/hsuanchi/LINE-Bot-Template/blob/master/img/table_by_week.jpg" width="800px" height="auto">
 
-#### Demo - LINE Bot 群組
-<img src="https://github.com/hsuanchi/LINE-Bot-Template/blob/master/img/line_bot_demo.jpg" width="200px" height="auto">
+
 
 如果有想建置機器人的朋友，這份程式已經整理過，並包好 Docker 環境，有需要的朋友只需要依以下步驟建立，就可以快速完成一個打卡聊天機器人囉
 
@@ -28,7 +26,7 @@
 - [ ] 取得 Channel secret
 - [ ] 取得 Channel access token
 
-2. 串接 Google Sheet 操作，請參考這篇 [python 串接 GoogleSheet 新增、讀取、更新和刪除 - Max行銷誌](https://www.maxlist.xyz/2018/09/25/python_googlesheet_crud/)
+2. 串接 Google Sheet 操作，請參考這篇 [python 串接 GoogleSheet CRUD Create Read Update and Delete (新增、讀取、更新和刪除) - Max行銷誌](https://www.maxlist.xyz/2018/09/25/python_googlesheet_crud/)
 - [ ] 取得 Google OAuth Credentials
 
 3. 將剛剛拿到的 Google OAuth Credentials 放到資料夾位置：`LINE-Bot-Template/bot/config/api-key.json`
